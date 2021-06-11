@@ -11,6 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+<<<<<<< HEAD
 #
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs anaconda time)
@@ -27,6 +28,26 @@ else
         . "/home/photon/anaconda3/etc/profile.d/conda.sh"
     else
         export PATH="/home/photon/anaconda3/bin:$PATH"
+=======
+
+export DEFAULT_USER=$USER
+# not currently being used, but necessary to display the right user context in my prompt
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv time)
+
+export PATH=$PATH:/anaconda3/bin
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('//anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "//anaconda3/etc/profile.d/conda.sh" ]; then
+        . "//anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="//anaconda3/bin:$PATH"
+>>>>>>> 2db7e078cf3d0093a4ee7a55065a112faca98075
     fi
 fi
 unset __conda_setup
